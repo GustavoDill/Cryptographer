@@ -5,7 +5,6 @@ namespace Cryptographer
 {
     public static class Settings
     {
-        public static int Cryptography { get; set; }
         private static List<object> crpts;
         public static List<object> AvaliableCryptographies
         {

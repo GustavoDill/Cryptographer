@@ -18,8 +18,8 @@
                 <ColumnDefinition Width="40*"/>
                 <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
-            <Button Text="Encrypt" Grid.Column="1" />
-            <Button Text="Decrypt" Grid.Column="2" />
+            <Button Text="Encrypt" Grid.Column="1" Clicked="Button_Clicked" />
+            <Button Text="Decrypt" Grid.Column="2" Clicked="Button_Clicked_1" />
         </Grid>
         <Editor Placeholder="Output" Text="" IsReadOnly="True"/>
         <Grid>
@@ -30,14 +30,14 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label x:Name="argName_1" Text="Name" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Entry x:Name="argInput_1"  Placeholder="" Grid.Row="0" Grid.Column="1"/>
-            <Label x:Name="argName_2" Text="Name" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Entry x:Name="argInput_2"  Placeholder="" Grid.Row="1" Grid.Column="1"/>
-            <Label x:Name="argName_3" Text="Name" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Entry x:Name="argInput_3"  Placeholder="" Grid.Row="2" Grid.Column="1"/>
-            <Label x:Name="argName_4" Text="Name" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Entry x:Name="argInput_4" Placeholder="" Grid.Row="3" Grid.Column="1"/>
+            <Label IsVisible="False" x:Name="argName_1" Text="Name" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry IsVisible="False" x:Name="argInput_1"  Placeholder="" Grid.Row="0" Grid.Column="1"/>
+            <Label IsVisible="False" x:Name="argName_2" Text="Name" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry IsVisible="False" x:Name="argInput_2"  Placeholder="" Grid.Row="1" Grid.Column="1"/>
+            <Label IsVisible="False"  x:Name="argName_3" Text="Name" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry IsVisible="False"  x:Name="argInput_3"  Placeholder="" Grid.Row="2" Grid.Column="1"/>
+            <Label IsVisible="False"  x:Name="argName_4" Text="Name" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry IsVisible="False"  x:Name="argInput_4" Placeholder="" Grid.Row="3" Grid.Column="1"/>
         </Grid>
     </StackLayout>
 

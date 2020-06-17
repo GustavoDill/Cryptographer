@@ -13,10 +13,11 @@ namespace Cryptographer
         public MainPage()
         {
             InitializeComponent();
-            Type = GetType();
+            Type = typeof(ArgumentFields);
             foreach (var c in Settings.AvaliableCryptographies)
                 AddItem(c);
-            HideAllArgs();
+            SetArgVisible(1, false);
+            SetArgVisible(2, false);
         }
         void HideAllArgs()
         {
@@ -41,6 +42,7 @@ namespace Cryptographer
         }
         void SetArgsVisible(int ammount)
         {
+            var total = 4;
 
         }
         void SetArgNames(string[] names)
@@ -50,24 +52,36 @@ namespace Cryptographer
         System.Type Type { get; set; }
         void SetArgVisible(int index, bool visibility)
         {
-            var f = Type.GetField("argName_" + index.ToString()).G;
-            if (f == null)
-                return;
-            f.GetType().GetProperty("IsVisible").SetValue(f, visibility);
-            f = Type.GetField("argInput_" + index.ToString());
-            if (f == null)
-                return;
-            f.GetType().GetProperty("IsVisible").SetValue(f, visibility);
+            switch (index)
+            {
+                case 1:
+                    argName_1.IsVisible = visibility;
+                    argInput_1.IsVisible = visibility;
+                    break;
+                case 2:
+                    argName_2.IsVisible = visibility;
+                    argInput_2.IsVisible = visibility;
+                    break;
+                case 3:
+                    argName_3.IsVisible = visibility;
+                    argInput_3.IsVisible = visibility;
+                    break;
+                case 4:
+                    argName_4.IsVisible = visibility;
+                    argInput_4.IsVisible = visibility;
+                    break;
+
+            }
         }
         void SetArgName(int index, string name)
         {
-            var f = Type.GetField("argName_" + index.ToString());
+            var f = Type.GetField("argName_" + (index + 1).ToString()).GetValue(this);
             if (f != null)
                 f.GetType().GetProperty("Text").SetValue(f, name);
         }
         string GetArgName(int index)
         {
-            var f = Type.GetField("argName_" + index.ToString());
+            var f = Type.GetField("argName_" + (index + 1).ToString()).GetValue(this);
             if (f == null)
                 return null;
             else
@@ -75,13 +89,13 @@ namespace Cryptographer
         }
         void SetArg(int index, object arg)
         {
-            var f = Type.GetField("argInput_" + index.ToString());
+            var f = Type.GetField("argInput_" + (index + 1).ToString()).GetValue(this);
             if (f != null)
                 f.GetType().GetProperty("Text").SetValue(f, arg.ToString());
         }
         T GetArg<T>(int index, T defaultReturn = null) where T : class
         {
-            var f = Type.GetField("argInput_" + index.ToString());
+            var f = Type.GetField("argInput_" + (index + 1).ToString()).GetValue(this);
             if (f != null)
                 return (T)System.Convert.ChangeType(f.GetType().GetProperty("Text").GetValue(f), typeof(T));
             else
@@ -89,28 +103,20 @@ namespace Cryptographer
         }
         private void cryptos_SelectedIndexChanged(object sender, System.EventArgs e)
         {
+            var cr = Settings.AvaliableCryptographies[((Picker)sender).SelectedIndex];
+            var encrypt = (MethodInfo)cr.GetType().GetProperty("Encrypt").GetValue(cr);
+            var prms = encrypt.GetParameters();
+            SetArgsVisible(prms.Length);
+        }
+
+        private void Button_Clicked(object sender, System.EventArgs e)
+        {
 
         }
-    }
-    public static class ArgumentFields
-    {
-        public static Label argName_1;
-        public static Label argName_2;
-        public static Label argName_3;
-        public static Label argName_4;
-        public static Label argName_5;
-        public static Label argName_6;
-        public static Label argName_7;
-        public static Label argName_8;
-        public static Label argName_9;
-        public static Entry argInput_1;
-        public static Entry argInput_2;
-        public static Entry argInput_3;
-        public static Entry argInput_4;
-        public static Entry argInput_5;
-        public static Entry argInput_6;
-        public static Entry argInput_7;
-        public static Entry argInput_8;
-        public static Entry argInput_9;
+
+        private void Button_Clicked_1(object sender, System.EventArgs e)
+        {
+            SetArgVisible(1, false);
+        }
     }
 }
