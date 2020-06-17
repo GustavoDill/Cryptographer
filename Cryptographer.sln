@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptographer.Android", "Cryptographer\Cryptographer.Android\Cryptographer.Android.csproj", "{B58EF98A-917A-4F7C-BF5F-15EBD0C78EF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptographer", "Cryptographer\Cryptographer\Cryptographer.csproj", "{7C3A5E37-4FBD-486B-8033-5B67C83CB0E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B58EF98A-917A-4F7C-BF5F-15EBD0C78EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B58EF98A-917A-4F7C-BF5F-15EBD0C78EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B58EF98A-917A-4F7C-BF5F-15EBD0C78EF8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B58EF98A-917A-4F7C-BF5F-15EBD0C78EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58EF98A-917A-4F7C-BF5F-15EBD0C78EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B58EF98A-917A-4F7C-BF5F-15EBD0C78EF8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7C3A5E37-4FBD-486B-8033-5B67C83CB0E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C3A5E37-4FBD-486B-8033-5B67C83CB0E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C3A5E37-4FBD-486B-8033-5B67C83CB0E6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7C3A5E37-4FBD-486B-8033-5B67C83CB0E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C3A5E37-4FBD-486B-8033-5B67C83CB0E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C3A5E37-4FBD-486B-8033-5B67C83CB0E6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58A24DC3-C445-407D-94B1-58F653A1C3D9}
+	EndGlobalSection
+EndGlobal

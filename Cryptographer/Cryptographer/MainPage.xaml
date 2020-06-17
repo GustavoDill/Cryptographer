@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Cryptographer.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+            <Picker Grid.Column="0" Title="Select Cryptography"
+            x:Name="cryptos"
+            SelectedIndexChanged="cryptos_SelectedIndexChanged" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Encrypt" Grid.Column="1" />
+            <Button Text="Decrypt" Grid.Column="2" />
+        </Grid>
+        <Editor Placeholder="Output" Text="" IsReadOnly="True"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="argName_1" Text="Name" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry x:Name="argInput_1"  Placeholder="" Grid.Row="0" Grid.Column="1"/>
+            <Label x:Name="argName_2" Text="Name" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry x:Name="argInput_2"  Placeholder="" Grid.Row="1" Grid.Column="1"/>
+            <Label x:Name="argName_3" Text="Name" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry x:Name="argInput_3"  Placeholder="" Grid.Row="2" Grid.Column="1"/>
+            <Label x:Name="argName_4" Text="Name" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry x:Name="argInput_4" Placeholder="" Grid.Row="3" Grid.Column="1"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
